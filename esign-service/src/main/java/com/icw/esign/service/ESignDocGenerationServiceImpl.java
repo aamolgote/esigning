@@ -44,9 +44,6 @@ public class ESignDocGenerationServiceImpl implements ESignDocGenerationService 
     @Autowired
     SignAndLockPdfService signAndLockPdfService;
 
-    @Value("${edelivery.prefix}")
-    String edeliveryApiPrefix;
-
     @Value("${s3.bucket.name}")
     String s3Bucket;
 
@@ -56,7 +53,6 @@ public class ESignDocGenerationServiceImpl implements ESignDocGenerationService 
     @Autowired
     CloudFileStorage cloudFileStorage;
 
-    private String pattern = "\\{\\{([\\w]+)\\}\\}";
     private static final Logger logger = LoggerFactory.getLogger(ESignDocGenerationServiceImpl.class);
 
     @Override
